@@ -1,9 +1,11 @@
-package lab2;
+
+package priceWatcher;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Graphics;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 
@@ -26,7 +28,7 @@ public class Main extends JFrame {
     private final static Dimension DEFAULT_SIZE = new Dimension(400, 300);
       
     /** Special panel to display the watched item. */
-    private ItemView itemView;
+    private itemView itemView;
       
     /** Message bar to display various messages. */
     private JLabel msgBar = new JLabel(" ");
@@ -40,6 +42,10 @@ public class Main extends JFrame {
     public Main(Dimension dim) {
         super("Price Watcher");
         setSize(dim);
+        
+        //**********************
+        
+        //********************
         
         configureUI();
         //setLocationRelativeTo(null);
@@ -55,7 +61,11 @@ public class Main extends JFrame {
     private void refreshButtonClicked(ActionEvent event) {
     	//--
     	//-- WRITE YOUR CODE HERE!
-    	//--
+    	//-- okay
+    	
+    	item.setItemPrice();
+    	itemView.paintComponent(getGraphics());
+    	
     	showMessage("Refresh clicked!");
     }
     
@@ -80,7 +90,7 @@ public class Main extends JFrame {
         		BorderFactory.createEmptyBorder(10,16,0,16),
         		BorderFactory.createLineBorder(Color.GRAY)));
         board.setLayout(new GridLayout(1,1));
-        itemView = new ItemView();
+        itemView = new itemView();
         itemView.setClickListener(this::viewPageClicked);
         board.add(itemView);
         add(board, BorderLayout.CENTER);
