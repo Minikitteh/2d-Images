@@ -63,8 +63,8 @@ public class Main extends JFrame {
     	//-- WRITE YOUR CODE HERE!
     	//-- okay
     	
-    	item.setItemPrice();
-    	itemView.paintComponent(getGraphics());
+    	priceUpdate();
+    	super.repaint();
     	
     	showMessage("Refresh clicked!");
     }
