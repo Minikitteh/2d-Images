@@ -53,14 +53,8 @@ public class itemView extends JPanel {
     @Override
 	public void paintComponent(Graphics g) {
         super.paintComponent(g); 
-        //Dimension dim = getSize();
-        
-        //--
-        //-- WRITE YOUR CODE HERE!
-        //-- okay
-        //--
         int x = 20, y = 30;
-        // g.drawImage(getImage("view.png"), x, y)
+        g.drawImage(getImage("desk.png"), x, y)
         g.drawString("Here is your item!", x, y);
         y += 20;
         g.drawString("Item name: " + item.itemName, x, y);
@@ -72,9 +66,7 @@ public class itemView extends JPanel {
     
     /** Return true if the given screen coordinate is inside the viewPage icon. */
     private boolean isViewPageClicked(int x, int y) {
-    	//--
-    	//-- WRITE YOUR CODE HERE
-    	//--
+    	//-- using j button leave this as is
     	return new Rectangle(20, 20, 30, 20).contains(x,  y);
     }
         
